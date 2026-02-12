@@ -136,9 +136,9 @@ for app in app_cards:
 with ubs_container(background="white"):
     st.subheader("All Applications")
     st.markdown("<div style='height:24px'></div>", unsafe_allow_html=True)
-    cols = st.columns(3, gap="medium")
+    cols = st.columns(4, gap="medium")
     for i, a in enumerate(filtered_apps):
-        with cols[i % 3]:
+        with cols[i % 4]:
             render_app_card(a, variant="tile", top_margin_px=16)
     section_spacer()
     st.write("These applications provide insights and simulations and are governed by UBS Responsible AI principles.")
