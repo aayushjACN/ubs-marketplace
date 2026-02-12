@@ -30,7 +30,22 @@
       "version": "0.2.0",
       "last_updated": "2024-11-15",
       "status": "Alpha"
+    },
+    {
+      "title": "UBS-FE",
+      "description": "A Intelligent client acquisition and campaign management tool through swarm of agents",
+      "image": "card_images/fe.png",
+      "app_url": "",
+      "demo_url": "https://ubsmkplstacuk.blob.core.windows.net/marketplace/tenx/tenx.mp4?sv=2024-11-04&ss=b&srt=co&sp=rtfx&se=2026-03-09T17:49:14Z&st=2025-09-09T08:34:14Z&spr=https&sig=rle24gmXXRpbbgrYra6bFlvgdUnqhsBxyQP0Q9040V4%3D",
+      "docs_url": "https://ubsmkplstacuk.blob.core.windows.net/marketplace/tenx/tenx.pdf?sv=2024-11-04&ss=b&srt=co&sp=rtfx&se=2026-03-09T17:49:14Z&st=2025-09-09T08:34:14Z&spr=https&sig=rle24gmXXRpbbgrYra6bFlvgdUnqhsBxyQP0Q9040V4%3D",
+      "tags": ["Generative AI", "Automation"],
+      "owner": "UBS Innovation Lab",
+      "business_line": "Asset Management",
+      "ai_type": "Generative AI",
+      "function": "Productivity",
+      "version": "0.2.0",
+      "last_updated": "2024-11-15",
+      "status": "Alpha"
     }
-
   ]
   
