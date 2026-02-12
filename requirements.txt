@@ -1,2 +1,2 @@
 poetry==2.1.4
-streamlit==1.49.1git 
+streamlit==1.49.1
