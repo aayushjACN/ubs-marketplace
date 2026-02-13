@@ -6,7 +6,7 @@ name: Deploy Docker image to Prod
 
 on:
   workflow_run:
-  workflows: ["Build and Push to ACR"]
+    workflows: ["Build and Push to ACR"]
     types:
       - completed
 
@@ -16,8 +16,8 @@ jobs:
     if: ${{ github.event.workflow_run.name == 'Build and Push to ACR' && github.event.workflow_run.conclusion == 'success' }}
 
     permissions:
-    id-token: write #This is required for requesting the JWT
-    contents: read #This is required for actions/checkout
+      id-token: write #This is required for requesting the JWT
+      contents: read #This is required for actions/checkout
 
     steps:
       - name: Login to Azure
