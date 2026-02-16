@@ -10,6 +10,33 @@ from typing import Optional, Dict, Any, List
 import base64, mimetypes, os, html
 import streamlit as st
 import requests
+from dotenv import load_dotenv
+from datetime import datetime, timedelta
+from azure.storage.blob import BlobServiceClient, generate_blob_sas, BlobSasPermissions
+
+account_name = os.environ.get("AZURE_STORAGE_ACCOUNT_NAME")
+account_key = os.environ.get("AZURE_STORAGE_ACCOUNT_KEY")
+container_name = os.environ.get("AZURE_STORAGE_CONTAINER_NAME")
+
+def get_signed_url(blob_name: str) -> str | None:
+    if not account_name or not account_key or not container_name:
+        st.error("❌ Missing environment variables! Please check your container configuration.")
+        return None
+
+    try:
+        sas_token = generate_blob_sas(
+            account_name=account_name,
+            container_name=container_name,
+            blob_name=blob_name,
+            account_key=account_key,
+            permission=BlobSasPermissions(read=True),
+            expiry=datetime.utcnow() + timedelta(hours=1) # Link valid for 1 hour
+        )
+        return f"https://{account_name}.blob.core.windows.net/{container_name}/{blob_name}?{sas_token}"
+    except Exception as e:
+        st.error(f"Error generating SAS token: {e}")
+        return None
+    
 
 def _css_inline(style: Optional[Dict[str, str]]) -> str:
     if not style:
@@ -345,6 +372,13 @@ def render_app_card(
     demo_url = (app.get("demo_url") or "").strip()
     docs_url = (app.get("docs_url") or "").strip()
 
+    if demo_url:
+        azure_demo_url = get_signed_url(demo_url)
+        if azure_demo_url:
+            demo_url = azure_demo_url
+        else:
+            st.warning(f"⚠️ Could not generate signed URL for demo: {demo_url}")
+     
     # Tags: enforce business line + function as the only tags shown on the card
     business_line = (app.get("business_line") or "").strip()
     function      = (app.get("function") or "").strip()
