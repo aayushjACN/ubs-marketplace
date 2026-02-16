@@ -30,7 +30,7 @@ jobs:
       - name: 'Deploy to Azure Web App'
         uses: azure/container-apps-deploy-action@v1
         with:
-          app-name: 'ubs-marketplace'
-          resource-group: 'UBS-lab-marketplace'
-          imageToDeploy: '${{ secrets.ACR_LOGIN_SERVER }}/ubsmkplace:latest'
+          containerAppName: 'ubs-marketplace'
+          resourceGroup: 'UBS-lab-marketplace'
+          imageToDeploy: '${{ secrets.ACR_LOGIN_SERVER }}/ubsmkplace:${{ github.event.workflow_run.head_sha }}'
           
