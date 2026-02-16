@@ -14,4 +14,4 @@ EXPOSE 8000
 
 HEALTHCHECK CMD curl --fail http://localhost:8000/_stcore/health 
 
-ENTRYPOINT ["python", "-m", "streamlit", "run", "marketplace.py", "--server.port=8000", "--server.address=0.0.0.0"]
+CMD ["python", "-m", "streamlit", "run", "marketplace.py", "--server.port=8000", "--server.address=0.0.0.0"]
