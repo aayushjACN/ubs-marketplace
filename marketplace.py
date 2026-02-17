@@ -10,13 +10,22 @@ from __future__ import annotations
 from pathlib import Path
 import json
 import streamlit as st
+import streamlit as st
+import os 
+from dotenv import load_dotenv
+from datetime import datetime, timedelta
+from azure.storage.blob import BlobServiceClient, generate_blob_sas, BlobSasPermissions
+
 
 from assets import HERO_URI
 from streamlit_css import inject_streamlit_css
 from ubs_components import inject_app_css, render_header, render_hero, render_services, render_footer
 from helpers import section_spacer, ubs_container, render_app_card
 
+
 # --------------------------- Streamlit setup (theme + page) ---------------------------
+
+
 def _write_theme_config() -> None:
     Path(".streamlit").mkdir(parents=True, exist_ok=True)
     (Path(".streamlit") / "config.toml").write_text(
@@ -136,7 +145,7 @@ for app in app_cards:
 with ubs_container(background="white"):
     st.subheader("All Applications")
     st.markdown("<div style='height:24px'></div>", unsafe_allow_html=True)
-    cols = st.columns(4, gap="medium")
+    cols = st.columns(4, gap="large")
     for i, a in enumerate(filtered_apps):
         with cols[i % 4]:
             render_app_card(a, variant="tile", top_margin_px=16)
