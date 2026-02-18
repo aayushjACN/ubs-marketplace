@@ -3,7 +3,7 @@
       "title": "UBS AgentForge",
       "description": "A new approach to process transformation for financial services.",
       "image": "card_images/agentforge.png",
-      "app_url": "https://ubs-agent-forge-haeecybncqhja7b9.uksouth-01.azurewebsites.net/",
+      "app_url": "https://agentforgeapp.happyfield-45ad49ef.uksouth.azurecontainerapps.io",
       "demo_url": "Agent Forge - Accenture_1.mp4",
       "docs_url": "Agent Forge Demo Pack.pdf",
       "tags": ["Generative AI", "Automation"],
