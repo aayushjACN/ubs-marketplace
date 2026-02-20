@@ -27,10 +27,13 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_9569E1643C8D40DA8F2F4B8C2B043AC3 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E57A4B45FAB3412B9EB8D54095A5A0D9 }}
 
-      - name: 'Deploy to Azure Web App'
+      - name: 'Deploy to Azure Container App'
         uses: azure/container-apps-deploy-action@v1
         with:
-          containerAppName: 'ubs-marketplace'
+          containerAppName: 'ubsmkplace'
           resourceGroup: 'UBS-lab-marketplace'
           imageToDeploy: '${{ secrets.ACR_LOGIN_SERVER }}/ubsmkplace:${{ github.event.workflow_run.head_sha }}'
+          containerAppEnvironment: 'ubs-marketplace-env'  # Specify environment explicitly
+          targetPort: 8000 # Add your app's port (assuming Streamlit default)
+          ingress: external  # Enable external ingress
           
