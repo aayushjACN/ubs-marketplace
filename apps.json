@@ -4,8 +4,8 @@
       "description": "A new approach to process transformation for financial services.",
       "image": "card_images/agentforge.png",
       "app_url": "https://agentforgeapp.happyfield-45ad49ef.uksouth.azurecontainerapps.io",
-      "demo_url": "Agent Forge - Accenture_1.mp4",
-      "docs_url": "https://ubsmkplaceuk.blob.core.windows.net/ubsmkplaceuk/Agent Forge Demo Pack.pdf",
+      "demo_url": "https://ubsmkplaceuk.blob.core.windows.net/ubsmkplaceuk/Agent%20Forge%20-%20Accenture_1.mp4",
+      "docs_url": "https://ubsmkplaceuk.blob.core.windows.net/ubsmkplaceuk/Agent%20Forge%20Demo%20Pack.pdf",
       "tags": ["Generative AI", "Automation"],
       "owner": "UBS Innovation Lab",
       "business_line": "Investment Bank",
@@ -36,8 +36,8 @@
       "description": "The future of investment advice in wealth management",
       "image": "card_images/ubs-fe.png",
       "app_url": "https://mango-rock-0b6ad131e.2.azurestaticapps.net",
-      "demo_url": "Future of Investment Advice_6c.mp4",
-      "docs_url": "https://ubsmkplaceuk.blob.core.windows.net/ubsmkplaceuk/Future of advice in WM_Report_Final.pdf",
+      "demo_url": "https://ubsmkplaceuk.blob.core.windows.net/ubsmkplaceuk/Future%20of%20Investment%20Advice_6c.mp4",
+      "docs_url": "https://ubsmkplaceuk.blob.core.windows.net/ubsmkplaceuk/Future%20of%20advice%20in%20WM_Report_Final.pdf",
       "tags": ["Generative AI", "Automation"],
       "owner": "UBS Innovation Lab",
       "business_line": "Asset Management",
@@ -48,4 +48,4 @@
       "status": "Alpha"
     }
   ]
-  
+
