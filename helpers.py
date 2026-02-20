@@ -376,10 +376,16 @@ def render_app_card(
 
     if demo_url:
         azure_demo_url = get_signed_url(demo_url)
+        azure_docs_url = get_signed_url(docs_url) 
+
         if azure_demo_url:
             demo_url = azure_demo_url
         else:
             st.warning(f"⚠️ Could not generate signed URL for demo: {demo_url}")
+        if azure_docs_url:
+            docs_url = azure_docs_url
+        else:
+            st.warning(f"⚠️ Could not generate signed URL for docs: {docs_url}")
      
     # Tags: enforce business line + function as the only tags shown on the card
     business_line = (app.get("business_line") or "").strip()
